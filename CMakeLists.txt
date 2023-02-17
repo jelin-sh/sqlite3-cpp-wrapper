@@ -6,11 +6,10 @@ set(CMAKE_CXX_STANDARD 17)
 ## add sqlite3
 include(FetchContent)
 message(STATUS "Download & Install SQLite3 ...")
-set(FETCHCONTENT_QUIET FALSE)
+#set(FETCHCONTENT_QUIET FALSE)
 fetchcontent_declare(
     sqlite3
     GIT_REPOSITORY https://gitee.com/skjsnb/sqlite3-amalgamation.git
-    GIT_PROGRESS TRUE
 )
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 set(NAME sqlite3)
