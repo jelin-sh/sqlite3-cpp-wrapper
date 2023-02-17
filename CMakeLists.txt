@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.11)
 
 project(sqlite3_cpp_wrapper)
 set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 
 ## add sqlite3
 include(FetchContent)
@@ -49,7 +51,7 @@ set(SQLITECPP_INC
 # add sources of the wrapper as a "SQLiteCpp" static library
 add_library(SQLiteCpp ${SQLITECPP_SRC} ${SQLITECPP_INC})
 target_link_libraries(SQLiteCpp PUBLIC sqlite3::sqlite3)
-target_include_directories(sqlite3 PUBLIC ${PROJECT_SOURCE_DIR}/include)
+target_include_directories(SQLiteCpp PUBLIC ${PROJECT_SOURCE_DIR}/include)
 
 add_library(SQLiteCpp::SQLiteCpp ALIAS SQLiteCpp)
 
